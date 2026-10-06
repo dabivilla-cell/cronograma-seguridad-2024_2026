@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/cronograma-seguridad-2024_2026/', // <-- Sustituye con el nombre exacto de tu repo
+  base: './', // <-- Asegúrate de que esta línea esté presente
   plugins: [react()],
 });
 
