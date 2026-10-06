@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@import "vis-timeline/styles/vis-timeline-graph2d.min.css";
+
+:root {
+  /* FAMILIA CÁLIDA / NARANJAS (Carril 1: Movilizaciones y Sociedad Civil) */
+  --color-movilizacion: #D97706;
+  --border-movilizacion: #B45309;
+  --color-propuesta-actor: #B45309;
+  --border-propuesta-actor: #92400E;
+  --color-posicion-actor: #F59E0B;
+  --border-posicion-actor: #D97706;
+
+  /* FAMILIA FRÍA / AZULES (Carril 2: Cambios Normativos e Institucional) */
+  --color-cambio-normativo: #2563EB;
+  --border-cambio-normativo: #1D4ED8;
+  --color-decision-institucional: #1D4ED8;
+  --border-decision-institucional: #1E40AF;
+  --color-propuesta-legislativa: #60A5FA;
+  --border-propuesta-legislativa: #3B82F6;
+
+  /* FAMILIA ROJA / CARMÍN (Carril 3: Opinión Pública y Medios) */
+  --color-cambio-opinion: #DC2626;
+  --border-cambio-opinion: #B91C1C;
+  --color-acontecimiento-publico: #E11D48;
+  --border-acontecimiento-publico: #BE123C;
+  --color-cobertura-mediatica: #F87171;
+  --border-cobertura-mediatica: #EF4444;
+  --color-cobertura-academica: #9F1239;
+  --border-cobertura-academica: #881337;
+}
+
+/* Clases de categorías estrictas por familias cromáticas (sin verdes ni morados) */
+.categoria-movilizacion {
+  background-color: #D97706 !important;
+  border-color: #B45309 !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-propuesta-actor,
+.categoria-propuesta-posicion-de-actor {
+  background-color: #B45309 !important;
+  border-color: #92400E !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-posicion-actor,
+.categoria-posicion-de-actor {
+  background-color: #F59E0B !important;
+  border-color: #D97706 !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-cambio-normativo {
+  background-color: #2563EB !important;
+  border-color: #1D4ED8 !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-decision-institucional {
+  background-color: #1D4ED8 !important;
+  border-color: #1E40AF !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-propuesta-legislativa {
+  background-color: #60A5FA !important;
+  border-color: #3B82F6 !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-cambio-en-opinion-publica,
+.categoria-opinion-publica {
+  background-color: #DC2626 !important;
+  border-color: #B91C1C !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-acontecimiento-publico {
+  background-color: #E11D48 !important;
+  border-color: #BE123C !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-cobertura-mediatica {
+  background-color: #F87171 !important;
+  border-color: #EF4444 !important;
+  color: #FFFFFF !important;
+}
+
+.categoria-cobertura-academica,
+.categoria-cobertura-mediatica-posicion-academica {
+  background-color: #9F1239 !important;
+  border-color: #881337 !important;
+  color: #FFFFFF !important;
+}
+
+/* Custom Vis.js Timeline styling for institutional editorial aesthetic */
+.vis-timeline {
+  border: 1px solid #E7E5E4 !important;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+  background-color: #FAFAF9;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.vis-panel.vis-left {
+  background-color: #F5F5F4;
+  border-right: 2px solid #E7E5E4 !important;
+  width: 190px !important;
+  min-width: 190px !important;
+  max-width: 190px !important;
+}
+
+.vis-labelset .vis-label {
+  border-bottom: 1px solid #E7E5E4 !important;
+  padding: 8px 10px !important;
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.75rem !important;
+  line-height: 1.25 !important;
+  color: #1C1917;
+  width: 190px !important;
+  box-sizing: border-box !important;
+}
+
+.vis-panel.vis-bottom, .vis-panel.vis-top {
+  border-color: #E7E5E4 !important;
+  background-color: #F5F5F4;
+}
+
+.vis-time-axis .vis-text {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.75rem !important;
+  color: #57534E !important;
+  padding-top: 4px;
+}
+
+.vis-time-axis .vis-grid.vis-minor {
+  border-color: #F0EFE9 !important;
+}
+
+.vis-time-axis .vis-grid.vis-major {
+  border-color: #E7E5E4 !important;
+  border-width: 1.5px !important;
+}
+
+/* Timeline items customized - Smooth, stationary hover, fixed compact width */
+.vis-item {
+  border-radius: 5px !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  cursor: pointer !important;
+  transition: opacity 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease !important;
+  border-width: 1.5px !important;
+  transform: none !important;
+  max-width: 210px !important;
+  box-sizing: border-box !important;
+}
+
+.vis-item:hover {
+  transform: none !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  filter: brightness(1.06);
+  opacity: 0.96;
+}
+
+.vis-item.vis-selected {
+  outline: 2.5px solid #000000 !important;
+  outline-offset: 1px !important;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.28) !important;
+}
+
+.vis-item .vis-item-content {
+  padding: 3px 7px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-size: 0.75rem !important;
+  line-height: 1.3 !important;
+  max-width: 200px !important;
+  display: block !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.vis-current-time {
+  background-color: #DC2626 !important;
+  width: 2px !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F5F4;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6D3D1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A8A29E;
+}

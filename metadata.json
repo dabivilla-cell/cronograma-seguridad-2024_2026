@@ -1,0 +1,8 @@
+{
+  "name": "Remix Cronograma Multi-Nivel: Seguridad Ciudadana en el Perú (2024-2026)",
+  "description": "Línea de tiempo interactiva multi-carril sobre seguridad ciudadana, movilización social, cambios normativos y opinión pública en Perú.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
