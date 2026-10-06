@@ -1,3 +1,12 @@
+import { defineConfig } from 'vite';
+import react from '@viteplugin-react'; // o los plugins que tenga tu archivo
+
+export default defineConfig({
+  base: '/cronograma-seguridad-2024_2026/', // <-- AGREGA ESTA LÍNEA AQUÍ
+  plugins: [react()],
+});
+
+
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
